@@ -38,6 +38,11 @@ app.get('/projects', (req, res) => {
     res.render('projects', { title });
 });
 
+app.get('/categories', (req, res) => {
+    const title = 'Categories';
+    res.render('categories', { title });
+});
+
 // 'app.listen()' allows our  application to listen for incoming requests
 // starts the server
 app.listen(PORT, () => {
