@@ -2,7 +2,7 @@ import express from 'express';
 import { fileURLToPath } from 'url';
 import path from 'path';
 
-const NODE_ENV = process.env.NODE_ENV?.toLowerCase() || 'development';
+const nodeEnv = process.env.NODE_ENV?.toLowerCase() || 'development';
 const PORT = process.env.PORT || 3000;
 
 const __filename = fileURLToPath(import.meta.url);
@@ -23,22 +23,22 @@ app.set('views', path.join(__dirname, 'src/views'));
 
 
 // 'app.get()' allows us to handle GET requests
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     const title = 'Home';
     res.render('home', { title });
 });
 
-app.get('/organizations', (req, res) => {
+app.get('/organizations', async (req, res) => {
     const title = 'Organizations';
     res.render('organizations', { title });
 });
 
-app.get('/projects', (req, res) => {
+app.get('/projects', async(req, res) => {
     const title = 'Projects';
     res.render('projects', { title });
 });
 
-app.get('/categories', (req, res) => {
+app.get('/categories', async (req, res) => {
     const title = 'Categories';
     res.render('categories', { title });
 });
@@ -47,5 +47,5 @@ app.get('/categories', (req, res) => {
 // starts the server
 app.listen(PORT, () => {
     console.log(`Server is running at http://127.0.0.1:${PORT}`);
-    console.log(`Environment: ${NODE_ENV}`);
+    console.log(`Environment: ${nodeEnv}`);
 });

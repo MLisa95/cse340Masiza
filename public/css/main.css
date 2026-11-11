@@ -166,6 +166,26 @@ main img.main-logo {
 
 }
 
+main ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+main ul li strong {
+    color: var(--primary);
+}
+
+main ul li strong:hover {
+    background: var(--primary);
+    color: var(--accent);
+    padding: 5px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
 footer {
     background-color: var(--primary);
     color: var(--surface);
