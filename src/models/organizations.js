@@ -2,7 +2,7 @@ import db from './db.js'
 
 const getAllOrganizations = async() => {
     const query = `
-    SELECT project_id, project_name, description, email, logo_filename
+    SELECT organization_id, project_name, description, email, logo_filename
     FROM public.organization_projects;
     `;
 
